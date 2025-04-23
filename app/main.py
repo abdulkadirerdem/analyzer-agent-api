@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.api import endpoints
 
 app = FastAPI(
@@ -9,6 +10,15 @@ app = FastAPI(
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT",
     },
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://code-insight-ui.vercel.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(endpoints.router)
