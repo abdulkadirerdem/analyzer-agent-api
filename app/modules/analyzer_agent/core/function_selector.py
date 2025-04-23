@@ -1,5 +1,5 @@
 from typing import List
-from agents.types import FunctionInfo
+from app.modules.analyzer_agent.agents.types import FunctionInfo
 
 
 def score_function(fn: FunctionInfo) -> int:
