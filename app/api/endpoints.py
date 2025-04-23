@@ -9,4 +9,5 @@ def root():
     return {"message": "Code Insight API is running 🚀"}
 
 
+# Include the codebase analyzer router
 router.include_router(codebase_analyzer.router)
